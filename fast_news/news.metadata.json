@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"fast_news.news"}],"uuid":"e53fa5557b554c48860f6f2f0b7766c5"}
