@@ -60,8 +60,16 @@ async def get_news_by_author(name: str):
         return news
         
     raise HTTPException(status_code=404, detail=f"News from author {name} not found")
-    
 
+@router.get("/content/{content}/", response_model=List[NewsModel])
+async def get_news_by_author(content: str):
+    news = await engine.find(NewsModel,  query.match(NewsModel.body, r"{}".format(content)))
+
+    if news:
+        return news
+        
+    raise HTTPException(status_code=404, detail=f"News with content {content} not found")
+    
 @router.delete("/delete/{id}/", response_model=NewsModel)
 async def delete_news(id: ObjectId):
     news = await engine.find_one(NewsModel, NewsModel.id == id)

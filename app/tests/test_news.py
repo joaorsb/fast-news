@@ -30,3 +30,9 @@ async def test_get_news_by_author(client):
     name = "Jane%20Doe"
     response = await client.get(f"/author/{name}/")
     assert response.status_code == 200
+
+@pytest.mark.asyncio
+async def test_get_news_by_body(client):
+    content = "sit amet"
+    response = await client.get(f"/content/{content}/")
+    assert response.status_code == 200
