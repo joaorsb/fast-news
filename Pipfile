@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+ipdb = "*"
+
+[packages]
+fastapi = {extras = ["all"],version = "*"}
+motor = "*"
+pydantic = "*"
+odmantic = "*"
+httpx = "*"
+pytest-asyncio = "*"
+pytest = "*"
+asgi-lifespan = "==1.*"
+
+[requires]
+python_version = "3.8"
